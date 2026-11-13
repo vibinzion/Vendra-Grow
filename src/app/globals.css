@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-serif), Georgia, Cambria, serif;
+  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --color-cream-50: #FCFBF9;
+  --color-cream-100: #F9F8F6;
+  --color-cream-200: #F4F1EB;
+  --color-cream-300: #EAE5DC;
+  
+  --color-green-950: #082414;
+  --color-green-900: #0D3B22;
+  --color-green-800: #1A472A;
+  --color-green-700: #235835;
+  --color-green-600: #2F7246;
+  --color-green-100: #E8EFE9;
+  --color-green-50: #F2F6F3;
+  
+  --color-charcoal-900: #1F1F1F;
+  --color-charcoal-800: #2D2D2D;
+  --color-charcoal-600: #555555;
+  --color-charcoal-400: #888888;
+  
+  --color-gold-600: #B38F46;
+  --color-gold-500: #C5A059;
+  --color-gold-400: #D8B774;
+}
+
+:root {
+  --bg-cream: #F9F8F6;
+  --text-charcoal: #2D2D2D;
+  --brand-green: #1A472A;
+  --brand-green-dark: #0D3B22;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F9F8F6;
+  color: #2D2D2D;
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Custom delicate glow & pedestal rings like reference */
+.halo-ring {
+  border: 1.5px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 0 25px rgba(197, 160, 89, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+.halo-ring-green {
+  border: 1.5px solid rgba(26, 71, 42, 0.25);
+  box-shadow: 0 0 35px rgba(26, 71, 42, 0.12);
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F1EB;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4BEB2;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1A472A;
+}
+
+/* Subtle animation pulses */
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 6s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
